@@ -1,0 +1,105 @@
+/* Style untuk latar belakang */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 2px;
+    animation: scrollBackground 10s linear infinite;
+}
+
+.background-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: transform 0.5s ease;
+}
+
+.background-grid img:hover {
+    transform: scale(1.2);
+    filter: brightness(1);
+}
+
+/* Animasi latar belakang */
+@keyframes scrollBackground {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/* Style untuk kartu ucapan */
+.birthday-card {
+    position: relative;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 1;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+.birthday-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+}
+
+.birthday-card img:hover {
+    transform: rotate(360deg);
+}
+
+.birthday-card h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.birthday-card p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.birthday-card .button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(45deg, #ff6f61, #ff4747);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.birthday-card .button:hover {
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    transform: scale(1.1);
+}
+
+/* Animasi fade-in */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
